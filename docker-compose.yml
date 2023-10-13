@@ -4,5 +4,9 @@ services:
   dockerfile:
     build:
       context: ../../
-      dockerfile: compose/6/Dockerfile
+      # dockerfile: compose/6/Dockerfile
+      dockerfile_inline: |
+        FROM ubuntu:latest
+        RUN --mount=type=bind,source=.,target=/data,rw ls /data >> /ls.txt
+        CMD cat /ls.txt
     pull_policy: build
