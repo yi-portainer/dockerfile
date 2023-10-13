@@ -3,5 +3,6 @@ version: '3.8'
 services:
   dockerfile:
     build:
-      dockerfile: ./Dockerfile
+      context: ../../
+      dockerfile: compose/6/Dockerfile
     pull_policy: build
